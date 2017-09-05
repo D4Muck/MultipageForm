@@ -27,7 +27,7 @@ class FormViewController: UIViewController {
     override func loadView() {
         contentView = UIView(frame: UIScreen.main.bounds)
         if (gradient == nil) {
-            contentView.backgroundColor = backgroundColor
+            contentView.backgroundColor = backgroundColor ?? .white
         }
 
         self.view = contentView

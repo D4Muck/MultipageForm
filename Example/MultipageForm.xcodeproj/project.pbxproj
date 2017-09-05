@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		1C9943CD7081B9F85033BC91 /* Pods_MultipageForm_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F660B8A61E061FAFA159E62 /* Pods_MultipageForm_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7226581F1F5EEED9000C2296 /* ExampleFormNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7226581E1F5EEED9000C2296 /* ExampleFormNavigationController.swift */; };
+		722658211F5EF019000C2296 /* AgeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722658201F5EF019000C2296 /* AgeFormView.swift */; };
+		722658231F5EF08A000C2296 /* AgeForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722658221F5EF08A000C2296 /* AgeForm.xib */; };
+		722658251F5EF26E000C2296 /* ColorForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722658241F5EF26E000C2296 /* ColorForm.xib */; };
+		722658271F5EF284000C2296 /* ColorFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722658261F5EF284000C2296 /* ColorFormView.swift */; };
 		97219DD592BAAF6C384507A6 /* Pods_MultipageForm_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C82EF7D6B8D67DD25F6913 /* Pods_MultipageForm_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,23 +34,27 @@
 /* Begin PBXFileReference section */
 		0245F4B729F05EC64586C642 /* Pods-MultipageForm_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultipageForm_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultipageForm_Tests/Pods-MultipageForm_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		08AD3E366272A27B333CCA81 /* Pods-MultipageForm_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultipageForm_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultipageForm_Example/Pods-MultipageForm_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2332D30C799B0A585C3E2172 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2332D30C799B0A585C3E2172 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		415988BF890C40D2795EFAE9 /* Pods-MultipageForm_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultipageForm_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultipageForm_Example/Pods-MultipageForm_Example.release.xcconfig"; sourceTree = "<group>"; };
 		418B79E8FF97EB6AEAE81010 /* Pods-MultipageForm_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultipageForm_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultipageForm_Tests/Pods-MultipageForm_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MultipageForm_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipageForm_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MultipageForm_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipageForm_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7226581E1F5EEED9000C2296 /* ExampleFormNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleFormNavigationController.swift; sourceTree = "<group>"; };
+		722658201F5EF019000C2296 /* AgeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeFormView.swift; sourceTree = "<group>"; };
+		722658221F5EF08A000C2296 /* AgeForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgeForm.xib; sourceTree = "<group>"; };
+		722658241F5EF26E000C2296 /* ColorForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorForm.xib; sourceTree = "<group>"; };
+		722658261F5EF284000C2296 /* ColorFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFormView.swift; sourceTree = "<group>"; };
 		8F660B8A61E061FAFA159E62 /* Pods_MultipageForm_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultipageForm_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF1EB05D4FE93B954844E877 /* MultipageForm.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MultipageForm.podspec; path = ../MultipageForm.podspec; sourceTree = "<group>"; };
+		BF1EB05D4FE93B954844E877 /* MultipageForm.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MultipageForm.podspec; path = ../MultipageForm.podspec; sourceTree = "<group>"; };
 		C9C82EF7D6B8D67DD25F6913 /* Pods_MultipageForm_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultipageForm_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD1CB7BCBE27692DDC2BA655 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DD1CB7BCBE27692DDC2BA655 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +113,15 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				7226581E1F5EEED9000C2296 /* ExampleFormNavigationController.swift */,
+				722658201F5EF019000C2296 /* AgeFormView.swift */,
+				722658221F5EF08A000C2296 /* AgeForm.xib */,
+				722658261F5EF284000C2296 /* ColorFormView.swift */,
+				722658241F5EF26E000C2296 /* ColorForm.xib */,
 			);
 			name = "Example for MultipageForm";
 			path = MultipageForm;
@@ -248,7 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				722658251F5EF26E000C2296 /* ColorForm.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				722658231F5EF08A000C2296 /* AgeForm.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -320,10 +334,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MultipageForm_Example/Pods-MultipageForm_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MultipageForm/MultipageForm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MultipageForm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,8 +397,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				722658211F5EF019000C2296 /* AgeFormView.swift in Sources */,
+				722658271F5EF284000C2296 /* ColorFormView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7226581F1F5EEED9000C2296 /* ExampleFormNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,11 +481,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -501,10 +522,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -519,7 +541,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -533,7 +555,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

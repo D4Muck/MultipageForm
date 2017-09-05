@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AgeFormView" customModule="MultipageForm_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xCR-ob-F7m">
+                    <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                    <date key="date" timeIntervalSinceReferenceDate="526315687.62131298">
+                        <!--2017-09-05 14:48:07 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When were you born?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEg-kd-0ea">
+                    <rect key="frame" x="93.5" y="0.0" width="188.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xCR-ob-F7m" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Zd-mS-47b"/>
+                <constraint firstItem="sEg-kd-0ea" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="A33-BQ-mHO"/>
+                <constraint firstItem="xCR-ob-F7m" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LpO-LO-ooZ"/>
+                <constraint firstItem="sEg-kd-0ea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="X8X-sY-Hc7"/>
+                <constraint firstItem="xCR-ob-F7m" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lMx-4v-y1E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xCR-ob-F7m" secondAttribute="trailing" id="qGl-ty-m6s"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="datePicker" destination="xCR-ob-F7m" id="Hja-yJ-ns1"/>
+            </connections>
+        </view>
+    </objects>
+</document>
