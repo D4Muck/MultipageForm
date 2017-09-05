@@ -22,7 +22,7 @@ pod 'MultipageForm'
 
 ## Author
 
-Christoph Muck, christoph.muck@catalysts.cc
+Christoph Muck, muckz11@gmail.com
 
 ## License
 
