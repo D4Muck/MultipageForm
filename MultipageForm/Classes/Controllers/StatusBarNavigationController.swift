@@ -48,7 +48,7 @@ open class StatusBarNavigationController: UINavigationController {
 }
 
 extension Reactive where Base: StatusBarNavigationController {
-    public var errorMessages: UIBindingObserver<Base, String> {
+    public func errorMessages<T:StatusBarTextType>() -> UIBindingObserver<Base, T> {
         return UIBindingObserver(UIElement: self.base) { navigationController, errorText in
             navigationController.showStatusBar(withText: errorText)
         }

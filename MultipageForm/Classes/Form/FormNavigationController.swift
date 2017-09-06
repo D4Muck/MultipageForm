@@ -65,9 +65,9 @@ open class FormNavigationController: StatusBarNavigationController {
         }()
         self.pushViewController(vc, animated: animated)
     }
-
-    func buttonTapped(sender weakSender: FormViewController?) -> Driver<Bool> {
-        guard let sender = weakSender else { return Driver.just(false) }
+    
+    func buttonTapped(sender weakSender: FormViewController?) -> Driver<String> {
+        guard let sender = weakSender else { return Driver.never() }
         let currentIndex = vcs.index(where: { $0 === sender })!
 
         (self.topViewController as? FormViewController)?.form.writeChangesToViewModel()
@@ -75,7 +75,7 @@ open class FormNavigationController: StatusBarNavigationController {
         let currentIndexIsLast = currentIndex == views.count - 1
         if (!currentIndexIsLast) {
             pushVc(withIndex: currentIndex + 1)
-            return Driver.just(true)
+            return Driver.never()
         } else {
             return save()
         }
@@ -84,14 +84,14 @@ open class FormNavigationController: StatusBarNavigationController {
     open func configureNavigationBar() {
     }
 
-    private func save() -> Driver<Bool> {
+    private func save() -> Driver<String> {
         return formNavigationControllerDelegate.save(self, viewModel: viewModel)
     }
 }
 
 public protocol FormNavigationControllerDelegate {
 
-    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<Bool>
+    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<String>
 
     func embeddedFormViewNames(_ formNavigationController: FormNavigationController) -> [String]
 

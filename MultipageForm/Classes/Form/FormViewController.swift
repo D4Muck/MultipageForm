@@ -112,20 +112,32 @@ class FormViewController: UIViewController {
     }
 
     private func initRx() {
-        let isLoading = nextButton.button.rx.tap.asDriver().map { [weak self] in self }
+        let errorMessages = nextButton.button.rx.tap.asDriver().map { [weak self] in self }
                 .flatMapLatest((self.navigationController as? FormNavigationController)!.buttonTapped)
+        
+        let isButtonEnabled: Driver<Bool>
 
-        isLoading.drive(nextButton.activityIndicator.rx.isAnimating).disposed(by: disposeBag)
+        if (lastForm) {
+            let isLoading = Driver.merge(
+                    nextButton.button.rx.tap.asDriver().map { _ in true },
+                    errorMessages.map { _ in false }
+            )
 
-        if let statusBarNavigationController = self.navigationController as? StatusBarNavigationController {
-            isLoading.filter { !$0 }.map { _ in "Alles ist kaputt!" }
-                    .drive(statusBarNavigationController.rx.errorMessages).disposed(by: disposeBag)
+            isLoading.drive(nextButton.activityIndicator.rx.isAnimating).disposed(by: disposeBag)
+
+            if let statusBarNavigationController = self.navigationController as? StatusBarNavigationController {
+                errorMessages.drive(statusBarNavigationController.rx.errorMessages()).disposed(by: disposeBag)
+            }
+
+            let isNotLoading = isLoading.map { !$0 }
+            isNotLoading.drive(cancelButton.rx.isEnabled).disposed(by: disposeBag)
+
+            isButtonEnabled = Driver.merge(form.nextButtonEnabled, isNotLoading)
+        } else {
+            isButtonEnabled = form.nextButtonEnabled
+            errorMessages.drive().disposed(by: disposeBag)
         }
 
-        let isNotLoading = isLoading.map { !$0 }
-        isNotLoading.drive(cancelButton.rx.isEnabled).disposed(by: disposeBag)
-
-        let isButtonEnabled = Driver.merge(form.nextButtonEnabled, isNotLoading)
         isButtonEnabled.drive(nextButton.button.rx.isEnabled).disposed(by: disposeBag)
     }
 
