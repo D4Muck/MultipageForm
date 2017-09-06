@@ -3,7 +3,7 @@
 //  TrainingDb
 //
 //  Created by Christoph Muck on 18/08/2017.
-//  Copyright © 2017 Catalysts. All rights reserved.
+//  Copyright © 2017 Christoph Muck. All rights reserved.
 //
 
 import UIKit

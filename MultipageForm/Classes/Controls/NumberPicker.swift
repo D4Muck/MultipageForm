@@ -1,6 +1,6 @@
 //
 // Created by Christoph Muck on 25/08/2017.
-// Copyright (c) 2017 Catalysts. All rights reserved.
+// Copyright (c) 2017 Christoph Muck. All rights reserved.
 //
 
 import UIKit
