@@ -7,11 +7,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-public class StatusBarNavigationController: UINavigationController {
+open class StatusBarNavigationController: UINavigationController {
 
     private let statusBarLabel = UILabel()
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         statusBarLabel.isHidden = true
@@ -30,10 +30,10 @@ public class StatusBarNavigationController: UINavigationController {
         ])
     }
 
-    func showStatusBar(withText text: String) {
+    func showStatusBar(withText text: StatusBarTextType) {
         self.statusBarLabel.layer.removeAllAnimations()
 
-        statusBarLabel.attributedText = NSAttributedString(string: "   " + text, attributes: [.font: UIFont.systemFont(ofSize: 15)])
+        statusBarLabel.attributedText = NSAttributedString(string: "   " + text.text, attributes: [.font: UIFont.systemFont(ofSize: 15)])
         statusBarLabel.alpha = 1.0
         statusBarLabel.isHidden = false
 
@@ -52,5 +52,15 @@ extension Reactive where Base: StatusBarNavigationController {
         return UIBindingObserver(UIElement: self.base) { navigationController, errorText in
             navigationController.showStatusBar(withText: errorText)
         }
+    }
+}
+
+public protocol StatusBarTextType {
+    var text: String { get }
+}
+
+extension String: StatusBarTextType {
+    public var text: String {
+        return self
     }
 }

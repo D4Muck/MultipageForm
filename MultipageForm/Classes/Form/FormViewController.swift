@@ -117,6 +117,11 @@ class FormViewController: UIViewController {
 
         isLoading.drive(nextButton.activityIndicator.rx.isAnimating).disposed(by: disposeBag)
 
+        if let statusBarNavigationController = self.navigationController as? StatusBarNavigationController {
+            isLoading.filter { !$0 }.map { _ in "Alles ist kaputt!" }
+                    .drive(statusBarNavigationController.rx.errorMessages).disposed(by: disposeBag)
+        }
+
         let isNotLoading = isLoading.map { !$0 }
         isNotLoading.drive(cancelButton.rx.isEnabled).disposed(by: disposeBag)
 

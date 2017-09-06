@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-open class FormNavigationController: UINavigationController {
+open class FormNavigationController: StatusBarNavigationController {
 
     var views: [FormView]!
     var vcs: [FormViewController?]!
@@ -75,7 +75,7 @@ open class FormNavigationController: UINavigationController {
         let currentIndexIsLast = currentIndex == views.count - 1
         if (!currentIndexIsLast) {
             pushVc(withIndex: currentIndex + 1)
-            return Driver.just(false)
+            return Driver.just(true)
         } else {
             return save()
         }
