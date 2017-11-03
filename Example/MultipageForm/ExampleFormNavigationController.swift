@@ -20,13 +20,13 @@ class ExampleFormNavigationController: FormNavigationController {
 
 extension ExampleFormNavigationController: FormNavigationControllerDelegate {
     
-    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<Bool> {
+    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<String> {
         let model = viewModel as! Model
         
         print("Congrats, you entered:")
         print(model)
         
-        return Driver.just(true)
+        return Driver.just("Your Error could be presented here!")
     }
     
     func embeddedFormViewNames(_ formNavigationController: FormNavigationController) -> [String] {
