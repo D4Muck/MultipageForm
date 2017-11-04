@@ -112,7 +112,7 @@ class FormViewController: UIViewController {
     }
 
     private func initRx() {
-        let errorMessages = nextButton.button.rx.tap.asDriver().map { [weak self] in self }
+        let errorMessages: Driver<ErrorMessageType> = nextButton.button.rx.tap.asDriver().map { [weak self] in self }
                 .flatMapLatest((self.navigationController as? FormNavigationController)!.buttonTapped)
         
         let isButtonEnabled: Driver<Bool>

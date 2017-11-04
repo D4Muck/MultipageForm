@@ -13,7 +13,7 @@ class AgeFormView: FormView {
     @IBOutlet var datePicker: UIDatePicker!
     
     override func writeChangesToViewModel() {
-        var model = self.viewModel as! Model
+        let model = self.viewModel as! Model
         model.age = datePicker.date
     }
 }

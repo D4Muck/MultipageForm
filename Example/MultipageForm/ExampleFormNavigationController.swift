@@ -20,7 +20,7 @@ class ExampleFormNavigationController: FormNavigationController {
 
 extension ExampleFormNavigationController: FormNavigationControllerDelegate {
     
-    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<String> {
+    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<ErrorMessageType> {
         let model = viewModel as! Model
         
         print("Congrats, you entered:")
@@ -29,7 +29,7 @@ extension ExampleFormNavigationController: FormNavigationControllerDelegate {
         return Driver.just("Your Error could be presented here!")
     }
     
-    func embeddedFormViewNames(_ formNavigationController: FormNavigationController) -> [String] {
+    func embeddedForms(_ formNavigationController: FormNavigationController) -> [FormViewConvertible] {
         return ["AgeForm", "ColorForm"]
     }
     

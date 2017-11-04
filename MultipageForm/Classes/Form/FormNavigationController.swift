@@ -24,7 +24,9 @@ open class FormNavigationController: StatusBarNavigationController {
         configureNavigationBar()
 
         viewModel = formNavigationControllerDelegate.instantiateViewModel(self)
-        views = formNavigationControllerDelegate.embeddedFormViewNames(self).map { initForm(withName: $0) }
+        views = formNavigationControllerDelegate.embeddedForms(self).map { $0.asFormView() }
+
+        initViews()
 
         cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissVc(sender:)))
 
@@ -36,11 +38,11 @@ open class FormNavigationController: StatusBarNavigationController {
         self.dismiss(animated: true)
     }
 
-    private func initForm(withName name: String) -> FormView {
-        let view = Bundle.main.loadNibNamed(name, owner: self)![0] as! FormView
-        view.viewModel = self.viewModel
-        view.didSetViewModel()
-        return view
+    private func initViews() {
+        self.views.forEach { view in
+            view.viewModel = self.viewModel
+            view.didSetViewModel()
+        }
     }
 
     private func pushVc(withIndex index: Int, animated: Bool = true) {
@@ -65,8 +67,8 @@ open class FormNavigationController: StatusBarNavigationController {
         }()
         self.pushViewController(vc, animated: animated)
     }
-    
-    func buttonTapped(sender weakSender: FormViewController?) -> Driver<String> {
+
+    func buttonTapped(sender weakSender: FormViewController?) -> Driver<ErrorMessageType> {
         guard let sender = weakSender else { return Driver.never() }
         let currentIndex = vcs.index(where: { $0 === sender })!
 
@@ -84,16 +86,16 @@ open class FormNavigationController: StatusBarNavigationController {
     open func configureNavigationBar() {
     }
 
-    private func save() -> Driver<String> {
+    private func save() -> Driver<ErrorMessageType> {
         return formNavigationControllerDelegate.save(self, viewModel: viewModel)
     }
 }
 
 public protocol FormNavigationControllerDelegate {
 
-    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<String>
+    func save(_ formNavigationController: FormNavigationController, viewModel: Any) -> Driver<ErrorMessageType>
 
-    func embeddedFormViewNames(_ formNavigationController: FormNavigationController) -> [String]
+    func embeddedForms(_ formNavigationController: FormNavigationController) -> [FormViewConvertible]
 
     func instantiateViewModel(_ formNavigationController: FormNavigationController) -> Any
 

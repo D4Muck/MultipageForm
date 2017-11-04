@@ -30,10 +30,10 @@ open class StatusBarNavigationController: UINavigationController {
         ])
     }
 
-    func showStatusBar(withText text: StatusBarTextType) {
+    func showStatusBar(withText text: ErrorMessageType) {
         self.statusBarLabel.layer.removeAllAnimations()
 
-        statusBarLabel.attributedText = NSAttributedString(string: "   " + text.text, attributes: [.font: UIFont.systemFont(ofSize: 15)])
+        statusBarLabel.attributedText = NSAttributedString(string: "   " + text.message, attributes: [.font: UIFont.systemFont(ofSize: 15)])
         statusBarLabel.alpha = 1.0
         statusBarLabel.isHidden = false
 
@@ -48,19 +48,19 @@ open class StatusBarNavigationController: UINavigationController {
 }
 
 extension Reactive where Base: StatusBarNavigationController {
-    public func errorMessages<T:StatusBarTextType>() -> Binder<T> {
+    public func errorMessages() -> Binder<ErrorMessageType> {
         return Binder(self.base) { navigationController, errorText in
             navigationController.showStatusBar(withText: errorText)
         }
     }
 }
 
-public protocol StatusBarTextType {
-    var text: String { get }
+public protocol ErrorMessageType {
+    var message: String { get }
 }
 
-extension String: StatusBarTextType {
-    public var text: String {
+extension String: ErrorMessageType {
+    public var message: String {
         return self
     }
 }
