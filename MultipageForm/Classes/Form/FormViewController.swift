@@ -99,9 +99,9 @@ class FormViewController: UIViewController {
 
     private func buttonTitle() -> String {
         if lastForm {
-            return "Speichern"
+            return "Save".localized
         } else {
-            return "Weiter"
+            return "Next".localized
         }
     }
 
